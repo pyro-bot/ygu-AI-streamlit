@@ -75,8 +75,8 @@ y = data.y
 x_ = np.linspace(data.x.min(), data.x.max(), 10)
 k = -4.0
 b = 0.0
-e = 1.0
-alpha = 0.00001
+e = 0.1
+alpha = 0.0001
 plant_x = np.linspace(-5, 5, 50)
 plant_y = [opt_func(x, y, k, 0) for k in plant_x]
 plt.figure(figsize=(8, 10))
@@ -86,7 +86,7 @@ prev_f = opt_func(x, y, k, b)
 cur_f = opt_func(x, y, k-e, b)
 if st.button('Оптимизировать'):    
     
-    for i in range(5000):
+    for i in range(500):
         plt.figure(figsize=(8, 10))
         plt.subplot(3, 1, 3)
         plt.plot(x, y, 'b.')
@@ -103,15 +103,15 @@ if st.button('Оптимизировать'):
         prev_f = cur_f
         cur_f = opt_func(x, y, k, b)
         
-        sleep(0.02)
+        sleep(0.25)
     
     prev_f = opt_func(x, y, k, b-e)
     cur_f = opt_func(x, y, k, b)
     plant_x = np.linspace(-4, 4, 50)
     plant_y = [opt_func(x, y, k, b) for b in plant_x]
-    e = 0.01
-    alpha = 0.001
-    for i in range(5000):
+    e = 0.05
+    alpha = 0.005
+    for i in range(500):
         plt.figure(figsize=(8, 10))
         plt.subplot(3, 1, 3)
         plt.plot(x, y, 'b.')
@@ -128,6 +128,6 @@ if st.button('Оптимизировать'):
         prev_f = cur_f
         cur_f = opt_func(x, y, k, b)
         
-        sleep(0.02)
+        sleep(0.25)
 
 '''В представленом примере параметры `k` и `b` оптимизируются по очереди, что является не оптимальным подходом. На практике как правило оптимизация будет происходить одновременно по всем параметрам сразу же'''
