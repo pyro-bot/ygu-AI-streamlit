@@ -1,0 +1,23 @@
+<svg width="111" height="100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="100" fill="white"/>
+    <circle cx="15" cy="25" r="10" stroke="black" fill="white" />
+    <circle cx="15" cy="75" r="10" stroke="black" fill="white" />
+    <text x="11" y="27" font-size="8">
+        X1
+    </text>
+    <text x="11" y="77" font-size="8">
+        X2
+    </text>
+    <line x1="25" x2="50" y1="25" y2="50" stroke="black"/>
+    <line x1="25" x2="50" y1="75" y2="50" stroke="black"/>
+    <circle cx="60" cy="50" r="10" fill="white" stroke="black"/>
+    <text x="56" y="54">
+        S
+    </text>
+    <line x1="70" x2="100" y1="50" y2="50" stroke="black"/>
+    <text x="80" y="46" font-size="12">
+        Y
+    </text>
+    <text x="38" y="35" font-size="8" >w1</text>
+    <text x="38" y="68" font-size="8" >w2</text>
+</svg>
